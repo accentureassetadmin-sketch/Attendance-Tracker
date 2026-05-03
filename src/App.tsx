@@ -20,7 +20,14 @@ const navItems = [
   { to: '/filtered-summary', label: 'Filtered Summary' },
   { to: '/admin', label: 'Admin' },
 ]
-
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    {/* This tells React Router to prefix all routes with your repo name */}
+    <BrowserRouter basename="/Attendance-Tracker">
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+);
 function App() {
   const [isDark, setIsDark] = useState<boolean>(
     () => localStorage.getItem('theme') !== 'light',
